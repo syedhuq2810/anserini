@@ -37,19 +37,19 @@ After indexing has completed, you should be able to perform retrieval as follows
 ```
 target/appassembler/bin/SearchCollection \
   -index indexes/lucene-index.mrtydi-v1.1-japanese-aca/ \
-  -topics tools/topics-and-qrels/topics.mrtydi-v1.1-ja.train.txt.gz \
+  -topics tools\topics-and-qrels\topics.mrtydi-v1.1-ja.train.txt.gz \
   -topicReader TsvInt \
   -output runs/run.mrtydi-v1.1-ja.bm25.topics.mrtydi-v1.1-ja.train.txt \
   -bm25 -hits 100 -language ja -useAutoCompositeAnalyzer &
 target/appassembler/bin/SearchCollection \
   -index indexes/lucene-index.mrtydi-v1.1-japanese-aca/ \
-  -topics tools/topics-and-qrels/topics.mrtydi-v1.1-ja.dev.txt.gz \
+  -topics tools\topics-and-qrels\topics.mrtydi-v1.1-ja.dev.txt.gz \
   -topicReader TsvInt \
   -output runs/run.mrtydi-v1.1-ja.bm25.topics.mrtydi-v1.1-ja.dev.txt \
   -bm25 -hits 100 -language ja -useAutoCompositeAnalyzer &
 target/appassembler/bin/SearchCollection \
   -index indexes/lucene-index.mrtydi-v1.1-japanese-aca/ \
-  -topics tools/topics-and-qrels/topics.mrtydi-v1.1-ja.test.txt.gz \
+  -topics tools\topics-and-qrels\topics.mrtydi-v1.1-ja.test.txt.gz \
   -topicReader TsvInt \
   -output runs/run.mrtydi-v1.1-ja.bm25.topics.mrtydi-v1.1-ja.test.txt \
   -bm25 -hits 100 -language ja -useAutoCompositeAnalyzer &
@@ -58,9 +58,9 @@ target/appassembler/bin/SearchCollection \
 Evaluation can be performed using `trec_eval`:
 
 ```
-target/appassembler/bin/trec_eval -c -M 100 -m recip_rank -c -m recall.100 tools/topics-and-qrels/qrels.mrtydi-v1.1-ja.train.txt runs/run.mrtydi-v1.1-ja.bm25.topics.mrtydi-v1.1-ja.train.txt
-target/appassembler/bin/trec_eval -c -M 100 -m recip_rank -c -m recall.100 tools/topics-and-qrels/qrels.mrtydi-v1.1-ja.dev.txt runs/run.mrtydi-v1.1-ja.bm25.topics.mrtydi-v1.1-ja.dev.txt
-target/appassembler/bin/trec_eval -c -M 100 -m recip_rank -c -m recall.100 tools/topics-and-qrels/qrels.mrtydi-v1.1-ja.test.txt runs/run.mrtydi-v1.1-ja.bm25.topics.mrtydi-v1.1-ja.test.txt
+target/appassembler/bin/trec_eval -c -M 100 -m recip_rank -c -m recall.100 tools\topics-and-qrels\qrels.mrtydi-v1.1-ja.train.txt runs/run.mrtydi-v1.1-ja.bm25.topics.mrtydi-v1.1-ja.train.txt
+target/appassembler/bin/trec_eval -c -M 100 -m recip_rank -c -m recall.100 tools\topics-and-qrels\qrels.mrtydi-v1.1-ja.dev.txt runs/run.mrtydi-v1.1-ja.bm25.topics.mrtydi-v1.1-ja.dev.txt
+target/appassembler/bin/trec_eval -c -M 100 -m recip_rank -c -m recall.100 tools\topics-and-qrels\qrels.mrtydi-v1.1-ja.test.txt runs/run.mrtydi-v1.1-ja.bm25.topics.mrtydi-v1.1-ja.test.txt
 ```
 
 ## Effectiveness

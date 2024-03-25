@@ -51,7 +51,7 @@ After indexing has completed, you should be able to perform retrieval as follows
 ```
 target/appassembler/bin/SearchCollection \
   -index indexes/lucene-index.beir-v1.0.0-cqadupstack-android-unicoil-noexp/ \
-  -topics tools/topics-and-qrels/topics.beir-v1.0.0-cqadupstack-android.test.unicoil-noexp.tsv.gz \
+  -topics tools\topics-and-qrels\topics.beir-v1.0.0-cqadupstack-android.test.unicoil-noexp.tsv.gz \
   -topicReader TsvString \
   -output runs/run.beir-v1.0.0-cqadupstack-android-unicoil-noexp.unicoil-noexp.topics.beir-v1.0.0-cqadupstack-android.test.unicoil-noexp.txt \
   -impact -pretokenized -removeQuery -hits 1000 &
@@ -60,9 +60,9 @@ target/appassembler/bin/SearchCollection \
 Evaluation can be performed using `trec_eval`:
 
 ```
-target/appassembler/bin/trec_eval -c -m ndcg_cut.10 tools/topics-and-qrels/qrels.beir-v1.0.0-cqadupstack-android.test.txt runs/run.beir-v1.0.0-cqadupstack-android-unicoil-noexp.unicoil-noexp.topics.beir-v1.0.0-cqadupstack-android.test.unicoil-noexp.txt
-target/appassembler/bin/trec_eval -c -m recall.100 tools/topics-and-qrels/qrels.beir-v1.0.0-cqadupstack-android.test.txt runs/run.beir-v1.0.0-cqadupstack-android-unicoil-noexp.unicoil-noexp.topics.beir-v1.0.0-cqadupstack-android.test.unicoil-noexp.txt
-target/appassembler/bin/trec_eval -c -m recall.1000 tools/topics-and-qrels/qrels.beir-v1.0.0-cqadupstack-android.test.txt runs/run.beir-v1.0.0-cqadupstack-android-unicoil-noexp.unicoil-noexp.topics.beir-v1.0.0-cqadupstack-android.test.unicoil-noexp.txt
+target/appassembler/bin/trec_eval -c -m ndcg_cut.10 tools\topics-and-qrels\qrels.beir-v1.0.0-cqadupstack-android.test.txt runs/run.beir-v1.0.0-cqadupstack-android-unicoil-noexp.unicoil-noexp.topics.beir-v1.0.0-cqadupstack-android.test.unicoil-noexp.txt
+target/appassembler/bin/trec_eval -c -m recall.100 tools\topics-and-qrels\qrels.beir-v1.0.0-cqadupstack-android.test.txt runs/run.beir-v1.0.0-cqadupstack-android-unicoil-noexp.unicoil-noexp.topics.beir-v1.0.0-cqadupstack-android.test.unicoil-noexp.txt
+target/appassembler/bin/trec_eval -c -m recall.1000 tools\topics-and-qrels\qrels.beir-v1.0.0-cqadupstack-android.test.txt runs/run.beir-v1.0.0-cqadupstack-android-unicoil-noexp.unicoil-noexp.topics.beir-v1.0.0-cqadupstack-android.test.unicoil-noexp.txt
 ```
 
 ## Effectiveness

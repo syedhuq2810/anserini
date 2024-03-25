@@ -55,7 +55,7 @@ After indexing has completed, you should be able to perform retrieval as follows
 ```
 target/appassembler/bin/SearchCollection \
   -index indexes/lucene-index.beir-v1.0.0-arguana-splade-pp-ed/ \
-  -topics tools/topics-and-qrels/topics.beir-v1.0.0-arguana.test.tsv.gz \
+  -topics tools\topics-and-qrels\topics.beir-v1.0.0-arguana.test.tsv.gz \
   -topicReader TsvString \
   -output runs/run.beir-v1.0.0-arguana-splade-pp-ed.splade-pp-ed.topics.beir-v1.0.0-arguana.test.txt \
   -impact -pretokenized -removeQuery -hits 1000 -encoder SpladePlusPlusEnsembleDistil &
@@ -64,9 +64,9 @@ target/appassembler/bin/SearchCollection \
 Evaluation can be performed using `trec_eval`:
 
 ```
-target/appassembler/bin/trec_eval -c -m ndcg_cut.10 tools/topics-and-qrels/qrels.beir-v1.0.0-arguana.test.txt runs/run.beir-v1.0.0-arguana-splade-pp-ed.splade-pp-ed.topics.beir-v1.0.0-arguana.test.txt
-target/appassembler/bin/trec_eval -c -m recall.100 tools/topics-and-qrels/qrels.beir-v1.0.0-arguana.test.txt runs/run.beir-v1.0.0-arguana-splade-pp-ed.splade-pp-ed.topics.beir-v1.0.0-arguana.test.txt
-target/appassembler/bin/trec_eval -c -m recall.1000 tools/topics-and-qrels/qrels.beir-v1.0.0-arguana.test.txt runs/run.beir-v1.0.0-arguana-splade-pp-ed.splade-pp-ed.topics.beir-v1.0.0-arguana.test.txt
+target/appassembler/bin/trec_eval -c -m ndcg_cut.10 tools\topics-and-qrels\qrels.beir-v1.0.0-arguana.test.txt runs/run.beir-v1.0.0-arguana-splade-pp-ed.splade-pp-ed.topics.beir-v1.0.0-arguana.test.txt
+target/appassembler/bin/trec_eval -c -m recall.100 tools\topics-and-qrels\qrels.beir-v1.0.0-arguana.test.txt runs/run.beir-v1.0.0-arguana-splade-pp-ed.splade-pp-ed.topics.beir-v1.0.0-arguana.test.txt
+target/appassembler/bin/trec_eval -c -m recall.1000 tools\topics-and-qrels\qrels.beir-v1.0.0-arguana.test.txt runs/run.beir-v1.0.0-arguana-splade-pp-ed.splade-pp-ed.topics.beir-v1.0.0-arguana.test.txt
 ```
 
 ## Effectiveness

@@ -44,21 +44,21 @@ After indexing has completed, you should be able to perform retrieval as follows
 ```
 target/appassembler/bin/SearchCollection \
   -index indexes/lucene-index.wapo.v3/ \
-  -topics tools/topics-and-qrels/topics.backgroundlinking20.txt \
+  -topics tools\topics-and-qrels\topics.backgroundlinking20.txt \
   -topicReader BackgroundLinking \
   -output runs/run.wapo.v3.bm25.topics.backgroundlinking20.txt \
   -backgroundLinking -backgroundLinking.k 100 -bm25 -hits 100 &
 
 target/appassembler/bin/SearchCollection \
   -index indexes/lucene-index.wapo.v3/ \
-  -topics tools/topics-and-qrels/topics.backgroundlinking20.txt \
+  -topics tools\topics-and-qrels\topics.backgroundlinking20.txt \
   -topicReader BackgroundLinking \
   -output runs/run.wapo.v3.bm25+rm3.topics.backgroundlinking20.txt \
   -backgroundLinking -backgroundLinking.k 100 -bm25 -rm3 -hits 100 &
 
 target/appassembler/bin/SearchCollection \
   -index indexes/lucene-index.wapo.v3/ \
-  -topics tools/topics-and-qrels/topics.backgroundlinking20.txt \
+  -topics tools\topics-and-qrels\topics.backgroundlinking20.txt \
   -topicReader BackgroundLinking \
   -output runs/run.wapo.v3.bm25+rm3+df.topics.backgroundlinking20.txt \
   -backgroundLinking -backgroundLinking.dateFilter -backgroundLinking.k 100 -bm25 -rm3 -hits 100 &
@@ -67,11 +67,11 @@ target/appassembler/bin/SearchCollection \
 Evaluation can be performed using `trec_eval`:
 
 ```
-target/appassembler/bin/trec_eval -c -M1000 -m map -c -M1000 -m ndcg_cut.5 tools/topics-and-qrels/qrels.backgroundlinking20.txt runs/run.wapo.v3.bm25.topics.backgroundlinking20.txt
+target/appassembler/bin/trec_eval -c -M1000 -m map -c -M1000 -m ndcg_cut.5 tools\topics-and-qrels\qrels.backgroundlinking20.txt runs/run.wapo.v3.bm25.topics.backgroundlinking20.txt
 
-target/appassembler/bin/trec_eval -c -M1000 -m map -c -M1000 -m ndcg_cut.5 tools/topics-and-qrels/qrels.backgroundlinking20.txt runs/run.wapo.v3.bm25+rm3.topics.backgroundlinking20.txt
+target/appassembler/bin/trec_eval -c -M1000 -m map -c -M1000 -m ndcg_cut.5 tools\topics-and-qrels\qrels.backgroundlinking20.txt runs/run.wapo.v3.bm25+rm3.topics.backgroundlinking20.txt
 
-target/appassembler/bin/trec_eval -c -M1000 -m map -c -M1000 -m ndcg_cut.5 tools/topics-and-qrels/qrels.backgroundlinking20.txt runs/run.wapo.v3.bm25+rm3+df.topics.backgroundlinking20.txt
+target/appassembler/bin/trec_eval -c -M1000 -m map -c -M1000 -m ndcg_cut.5 tools\topics-and-qrels\qrels.backgroundlinking20.txt runs/run.wapo.v3.bm25+rm3+df.topics.backgroundlinking20.txt
 ```
 
 ## Effectiveness

@@ -54,7 +54,7 @@ After indexing has completed, you should be able to perform retrieval as follows
 ```
 target/appassembler/bin/SearchHnswDenseVectors \
   -index indexes/lucene-hnsw.beir-v1.0.0-quora-bge-base-en-v1.5-int8/ \
-  -topics tools/topics-and-qrels/topics.beir-v1.0.0-quora.test.bge-base-en-v1.5.jsonl.gz \
+  -topics tools\topics-and-qrels\topics.beir-v1.0.0-quora.test.bge-base-en-v1.5.jsonl.gz \
   -topicReader JsonStringVector \
   -output runs/run.beir-v1.0.0-bge-base-en-v1.5.bge-hnsw.topics.beir-v1.0.0-quora.test.bge-base-en-v1.5.jsonl.txt \
   -generator VectorQueryGenerator -topicField vector -removeQuery -threads 16 -hits 1000 -efSearch 1000 &
@@ -63,9 +63,9 @@ target/appassembler/bin/SearchHnswDenseVectors \
 Evaluation can be performed using `trec_eval`:
 
 ```
-target/appassembler/bin/trec_eval -c -m ndcg_cut.10 tools/topics-and-qrels/qrels.beir-v1.0.0-quora.test.txt runs/run.beir-v1.0.0-bge-base-en-v1.5.bge-hnsw.topics.beir-v1.0.0-quora.test.bge-base-en-v1.5.jsonl.txt
-target/appassembler/bin/trec_eval -c -m recall.100 tools/topics-and-qrels/qrels.beir-v1.0.0-quora.test.txt runs/run.beir-v1.0.0-bge-base-en-v1.5.bge-hnsw.topics.beir-v1.0.0-quora.test.bge-base-en-v1.5.jsonl.txt
-target/appassembler/bin/trec_eval -c -m recall.1000 tools/topics-and-qrels/qrels.beir-v1.0.0-quora.test.txt runs/run.beir-v1.0.0-bge-base-en-v1.5.bge-hnsw.topics.beir-v1.0.0-quora.test.bge-base-en-v1.5.jsonl.txt
+target/appassembler/bin/trec_eval -c -m ndcg_cut.10 tools\topics-and-qrels\qrels.beir-v1.0.0-quora.test.txt runs/run.beir-v1.0.0-bge-base-en-v1.5.bge-hnsw.topics.beir-v1.0.0-quora.test.bge-base-en-v1.5.jsonl.txt
+target/appassembler/bin/trec_eval -c -m recall.100 tools\topics-and-qrels\qrels.beir-v1.0.0-quora.test.txt runs/run.beir-v1.0.0-bge-base-en-v1.5.bge-hnsw.topics.beir-v1.0.0-quora.test.bge-base-en-v1.5.jsonl.txt
+target/appassembler/bin/trec_eval -c -m recall.1000 tools\topics-and-qrels\qrels.beir-v1.0.0-quora.test.txt runs/run.beir-v1.0.0-bge-base-en-v1.5.bge-hnsw.topics.beir-v1.0.0-quora.test.bge-base-en-v1.5.jsonl.txt
 ```
 
 ## Effectiveness

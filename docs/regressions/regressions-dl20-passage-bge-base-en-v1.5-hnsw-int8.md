@@ -80,7 +80,7 @@ After indexing has completed, you should be able to perform retrieval as follows
 ```bash
 target/appassembler/bin/SearchHnswDenseVectors \
   -index indexes/lucene-hnsw.msmarco-passage-bge-base-en-v1.5-int8/ \
-  -topics tools/topics-and-qrels/topics.dl20.bge-base-en-v1.5.jsonl.gz \
+  -topics tools\topics-and-qrels\topics.dl20.bge-base-en-v1.5.jsonl.gz \
   -topicReader JsonIntVector \
   -output runs/run.msmarco-passage-bge-base-en-v1.5.bge-hnsw-cached_q.topics.dl20.bge-base-en-v1.5.jsonl.txt \
   -generator VectorQueryGenerator -topicField vector -threads 16 -hits 1000 -efSearch 1000 &
@@ -89,10 +89,10 @@ target/appassembler/bin/SearchHnswDenseVectors \
 Evaluation can be performed using `trec_eval`:
 
 ```bash
-target/appassembler/bin/trec_eval -m map -c -l 2 tools/topics-and-qrels/qrels.dl20-passage.txt runs/run.msmarco-passage-bge-base-en-v1.5.bge-hnsw-cached_q.topics.dl20.bge-base-en-v1.5.jsonl.txt
-target/appassembler/bin/trec_eval -m ndcg_cut.10 -c tools/topics-and-qrels/qrels.dl20-passage.txt runs/run.msmarco-passage-bge-base-en-v1.5.bge-hnsw-cached_q.topics.dl20.bge-base-en-v1.5.jsonl.txt
-target/appassembler/bin/trec_eval -m recall.100 -c -l 2 tools/topics-and-qrels/qrels.dl20-passage.txt runs/run.msmarco-passage-bge-base-en-v1.5.bge-hnsw-cached_q.topics.dl20.bge-base-en-v1.5.jsonl.txt
-target/appassembler/bin/trec_eval -m recall.1000 -c -l 2 tools/topics-and-qrels/qrels.dl20-passage.txt runs/run.msmarco-passage-bge-base-en-v1.5.bge-hnsw-cached_q.topics.dl20.bge-base-en-v1.5.jsonl.txt
+target/appassembler/bin/trec_eval -m map -c -l 2 tools\topics-and-qrels\qrels.dl20-passage.txt runs/run.msmarco-passage-bge-base-en-v1.5.bge-hnsw-cached_q.topics.dl20.bge-base-en-v1.5.jsonl.txt
+target/appassembler/bin/trec_eval -m ndcg_cut.10 -c tools\topics-and-qrels\qrels.dl20-passage.txt runs/run.msmarco-passage-bge-base-en-v1.5.bge-hnsw-cached_q.topics.dl20.bge-base-en-v1.5.jsonl.txt
+target/appassembler/bin/trec_eval -m recall.100 -c -l 2 tools\topics-and-qrels\qrels.dl20-passage.txt runs/run.msmarco-passage-bge-base-en-v1.5.bge-hnsw-cached_q.topics.dl20.bge-base-en-v1.5.jsonl.txt
+target/appassembler/bin/trec_eval -m recall.1000 -c -l 2 tools\topics-and-qrels\qrels.dl20-passage.txt runs/run.msmarco-passage-bge-base-en-v1.5.bge-hnsw-cached_q.topics.dl20.bge-base-en-v1.5.jsonl.txt
 ```
 
 ## Effectiveness

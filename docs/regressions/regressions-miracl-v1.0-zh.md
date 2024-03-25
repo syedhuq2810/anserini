@@ -35,7 +35,7 @@ After indexing has completed, you should be able to perform retrieval as follows
 ```
 target/appassembler/bin/SearchCollection \
   -index indexes/lucene-index.miracl-v1.0-zh/ \
-  -topics tools/topics-and-qrels/topics.miracl-v1.0-zh-dev.tsv \
+  -topics tools\topics-and-qrels\topics.miracl-v1.0-zh-dev.tsv \
   -topicReader TsvString \
   -output runs/run.miracl-v1.0-zh.bm25.topics.miracl-v1.0-zh-dev.txt \
   -bm25 -hits 100 -language zh &
@@ -44,8 +44,8 @@ target/appassembler/bin/SearchCollection \
 Evaluation can be performed using `trec_eval`:
 
 ```
-target/appassembler/bin/trec_eval -c -m ndcg_cut.10 tools/topics-and-qrels/qrels.miracl-v1.0-zh-dev.tsv runs/run.miracl-v1.0-zh.bm25.topics.miracl-v1.0-zh-dev.txt
-target/appassembler/bin/trec_eval -c -m recall.100 tools/topics-and-qrels/qrels.miracl-v1.0-zh-dev.tsv runs/run.miracl-v1.0-zh.bm25.topics.miracl-v1.0-zh-dev.txt
+target/appassembler/bin/trec_eval -c -m ndcg_cut.10 tools\topics-and-qrels\qrels.miracl-v1.0-zh-dev.tsv runs/run.miracl-v1.0-zh.bm25.topics.miracl-v1.0-zh-dev.txt
+target/appassembler/bin/trec_eval -c -m recall.100 tools\topics-and-qrels\qrels.miracl-v1.0-zh-dev.tsv runs/run.miracl-v1.0-zh.bm25.topics.miracl-v1.0-zh-dev.txt
 ```
 
 ## Effectiveness

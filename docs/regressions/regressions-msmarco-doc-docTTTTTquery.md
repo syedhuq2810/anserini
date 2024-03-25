@@ -52,14 +52,14 @@ After indexing has completed, you should be able to perform retrieval as follows
 ```
 target/appassembler/bin/SearchCollection \
   -index indexes/lucene-index.msmarco-doc-docTTTTTquery/ \
-  -topics tools/topics-and-qrels/topics.msmarco-doc.dev.txt \
+  -topics tools\topics-and-qrels\topics.msmarco-doc.dev.txt \
   -topicReader TsvInt \
   -output runs/run.msmarco-doc-docTTTTTquery.bm25-default.topics.msmarco-doc.dev.txt \
   -bm25 &
 
 target/appassembler/bin/SearchCollection \
   -index indexes/lucene-index.msmarco-doc-docTTTTTquery/ \
-  -topics tools/topics-and-qrels/topics.msmarco-doc.dev.txt \
+  -topics tools\topics-and-qrels\topics.msmarco-doc.dev.txt \
   -topicReader TsvInt \
   -output runs/run.msmarco-doc-docTTTTTquery.bm25-tuned.topics.msmarco-doc.dev.txt \
   -bm25 -bm25.k1 4.68 -bm25.b 0.87 &
@@ -68,15 +68,15 @@ target/appassembler/bin/SearchCollection \
 Evaluation can be performed using `trec_eval`:
 
 ```
-target/appassembler/bin/trec_eval -c -m map tools/topics-and-qrels/qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-default.topics.msmarco-doc.dev.txt
-target/appassembler/bin/trec_eval -c -M 100 -m recip_rank tools/topics-and-qrels/qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-default.topics.msmarco-doc.dev.txt
-target/appassembler/bin/trec_eval -c -m recall.100 tools/topics-and-qrels/qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-default.topics.msmarco-doc.dev.txt
-target/appassembler/bin/trec_eval -c -m recall.1000 tools/topics-and-qrels/qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-default.topics.msmarco-doc.dev.txt
+target/appassembler/bin/trec_eval -c -m map tools\topics-and-qrels\qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-default.topics.msmarco-doc.dev.txt
+target/appassembler/bin/trec_eval -c -M 100 -m recip_rank tools\topics-and-qrels\qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-default.topics.msmarco-doc.dev.txt
+target/appassembler/bin/trec_eval -c -m recall.100 tools\topics-and-qrels\qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-default.topics.msmarco-doc.dev.txt
+target/appassembler/bin/trec_eval -c -m recall.1000 tools\topics-and-qrels\qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-default.topics.msmarco-doc.dev.txt
 
-target/appassembler/bin/trec_eval -c -m map tools/topics-and-qrels/qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-tuned.topics.msmarco-doc.dev.txt
-target/appassembler/bin/trec_eval -c -M 100 -m recip_rank tools/topics-and-qrels/qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-tuned.topics.msmarco-doc.dev.txt
-target/appassembler/bin/trec_eval -c -m recall.100 tools/topics-and-qrels/qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-tuned.topics.msmarco-doc.dev.txt
-target/appassembler/bin/trec_eval -c -m recall.1000 tools/topics-and-qrels/qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-tuned.topics.msmarco-doc.dev.txt
+target/appassembler/bin/trec_eval -c -m map tools\topics-and-qrels\qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-tuned.topics.msmarco-doc.dev.txt
+target/appassembler/bin/trec_eval -c -M 100 -m recip_rank tools\topics-and-qrels\qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-tuned.topics.msmarco-doc.dev.txt
+target/appassembler/bin/trec_eval -c -m recall.100 tools\topics-and-qrels\qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-tuned.topics.msmarco-doc.dev.txt
+target/appassembler/bin/trec_eval -c -m recall.1000 tools\topics-and-qrels\qrels.msmarco-doc.dev.txt runs/run.msmarco-doc-docTTTTTquery.bm25-tuned.topics.msmarco-doc.dev.txt
 ```
 
 ## Effectiveness

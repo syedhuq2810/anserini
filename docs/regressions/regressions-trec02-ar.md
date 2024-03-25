@@ -46,7 +46,7 @@ After indexing has completed, you should be able to perform retrieval as follows
 ```
 target/appassembler/bin/SearchCollection \
   -index indexes/lucene-index.trec02-ar/ \
-  -topics tools/topics-and-qrels/topics.trec02ar-ar.txt \
+  -topics tools\topics-and-qrels\topics.trec02ar-ar.txt \
   -topicReader Trec \
   -output runs/run.trec02-ar.bm25.topics.trec02ar-ar.txt \
   -bm25 -language ar &
@@ -55,7 +55,7 @@ target/appassembler/bin/SearchCollection \
 Evaluation can be performed using `trec_eval`:
 
 ```
-target/appassembler/bin/trec_eval -m map -m P.20 -m ndcg_cut.20 tools/topics-and-qrels/qrels.trec02ar.txt runs/run.trec02-ar.bm25.topics.trec02ar-ar.txt
+target/appassembler/bin/trec_eval -m map -m P.20 -m ndcg_cut.20 tools\topics-and-qrels\qrels.trec02ar.txt runs/run.trec02-ar.bm25.topics.trec02ar-ar.txt
 ```
 
 ## Effectiveness

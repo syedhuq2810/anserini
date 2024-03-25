@@ -35,19 +35,19 @@ After indexing has completed, you should be able to perform retrieval as follows
 ```
 target/appassembler/bin/SearchCollection \
   -index indexes/lucene-index.ciral-v1.0-yo/ \
-  -topics tools/topics-and-qrels/topics.ciral-v1.0-yo-test-a-native.tsv \
+  -topics tools\topics-and-qrels\topics.ciral-v1.0-yo-test-a-native.tsv \
   -topicReader TsvInt \
   -output runs/run.ciral-yoruba.bm25-default.topics.ciral-v1.0-yo-test-a-native.txt \
   -bm25 -hits 1000 -language yo &
 target/appassembler/bin/SearchCollection \
   -index indexes/lucene-index.ciral-v1.0-yo/ \
-  -topics tools/topics-and-qrels/topics.ciral-v1.0-yo-test-a-native.tsv \
+  -topics tools\topics-and-qrels\topics.ciral-v1.0-yo-test-a-native.tsv \
   -topicReader TsvInt \
   -output runs/run.ciral-yoruba.bm25-default.topics.ciral-v1.0-yo-test-a-native.txt \
   -bm25 -hits 1000 -language yo &
 target/appassembler/bin/SearchCollection \
   -index indexes/lucene-index.ciral-v1.0-yo/ \
-  -topics tools/topics-and-qrels/topics.ciral-v1.0-yo-test-b-native.tsv \
+  -topics tools\topics-and-qrels\topics.ciral-v1.0-yo-test-b-native.tsv \
   -topicReader TsvInt \
   -output runs/run.ciral-yoruba.bm25-default.topics.ciral-v1.0-yo-test-b-native.txt \
   -bm25 -hits 1000 -language yo &
@@ -56,12 +56,12 @@ target/appassembler/bin/SearchCollection \
 Evaluation can be performed using `trec_eval`:
 
 ```
-target/appassembler/bin/trec_eval -c -m ndcg_cut.20 tools/topics-and-qrels/qrels.ciral-v1.0-yo-test-a.tsv runs/run.ciral-yoruba.bm25-default.topics.ciral-v1.0-yo-test-a-native.txt
-target/appassembler/bin/trec_eval -c -m recall.100 tools/topics-and-qrels/qrels.ciral-v1.0-yo-test-a.tsv runs/run.ciral-yoruba.bm25-default.topics.ciral-v1.0-yo-test-a-native.txt
-target/appassembler/bin/trec_eval -c -m ndcg_cut.20 tools/topics-and-qrels/qrels.ciral-v1.0-yo-test-a-pools.tsv runs/run.ciral-yoruba.bm25-default.topics.ciral-v1.0-yo-test-a-native.txt
-target/appassembler/bin/trec_eval -c -m recall.100 tools/topics-and-qrels/qrels.ciral-v1.0-yo-test-a-pools.tsv runs/run.ciral-yoruba.bm25-default.topics.ciral-v1.0-yo-test-a-native.txt
-target/appassembler/bin/trec_eval -c -m ndcg_cut.20 tools/topics-and-qrels/qrels.ciral-v1.0-yo-test-b.tsv runs/run.ciral-yoruba.bm25-default.topics.ciral-v1.0-yo-test-b-native.txt
-target/appassembler/bin/trec_eval -c -m recall.100 tools/topics-and-qrels/qrels.ciral-v1.0-yo-test-b.tsv runs/run.ciral-yoruba.bm25-default.topics.ciral-v1.0-yo-test-b-native.txt
+target/appassembler/bin/trec_eval -c -m ndcg_cut.20 tools\topics-and-qrels\qrels.ciral-v1.0-yo-test-a.tsv runs/run.ciral-yoruba.bm25-default.topics.ciral-v1.0-yo-test-a-native.txt
+target/appassembler/bin/trec_eval -c -m recall.100 tools\topics-and-qrels\qrels.ciral-v1.0-yo-test-a.tsv runs/run.ciral-yoruba.bm25-default.topics.ciral-v1.0-yo-test-a-native.txt
+target/appassembler/bin/trec_eval -c -m ndcg_cut.20 tools\topics-and-qrels\qrels.ciral-v1.0-yo-test-a-pools.tsv runs/run.ciral-yoruba.bm25-default.topics.ciral-v1.0-yo-test-a-native.txt
+target/appassembler/bin/trec_eval -c -m recall.100 tools\topics-and-qrels\qrels.ciral-v1.0-yo-test-a-pools.tsv runs/run.ciral-yoruba.bm25-default.topics.ciral-v1.0-yo-test-a-native.txt
+target/appassembler/bin/trec_eval -c -m ndcg_cut.20 tools\topics-and-qrels\qrels.ciral-v1.0-yo-test-b.tsv runs/run.ciral-yoruba.bm25-default.topics.ciral-v1.0-yo-test-b-native.txt
+target/appassembler/bin/trec_eval -c -m recall.100 tools\topics-and-qrels\qrels.ciral-v1.0-yo-test-b.tsv runs/run.ciral-yoruba.bm25-default.topics.ciral-v1.0-yo-test-b-native.txt
 ```
 
 ## Effectiveness
